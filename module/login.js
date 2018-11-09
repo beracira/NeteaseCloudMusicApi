@@ -8,6 +8,7 @@ module.exports = (query, request) => {
         password: crypto.createHash('md5').update(query.password).digest('hex'),
         rememberLogin: 'true'
     }
+    console.log(query.cookie)
     return request(
         'POST', `http://music.163.com/weapi/login`, data,
         {crypto: 'weapi', ua: 'pc', cookie: query.cookie, proxy: query.proxy}

@@ -70,6 +70,9 @@ fs.readdirSync(path.join(__dirname, 'module')).reverse().forEach(file => {
         question(query, request)
         .then(answer => {
             console.log('[OK]', decodeURIComponent(req.originalUrl))
+            console.log('-----------')
+            console.log(answer.cookie)
+            console.log('-----------')
             res.append('Set-Cookie', answer.cookie)
             res.status(answer.status).send(answer.body)
         })

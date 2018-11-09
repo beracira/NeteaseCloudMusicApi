@@ -36,7 +36,7 @@ const chooseUserAgent = (ua) => {
 const createRequest = (method, url, data, options) => {
     return new Promise((resolve, reject) => {
 
-        let headers = {'User-Agent': chooseUserAgent(options.ua)}
+        let headers = {'User-Agent': chooseUserAgent(options.ua), 'X-Real-IP':'211.161.244.70'}
         if(method.toUpperCase() == 'POST') headers['Content-Type'] = 'application/x-www-form-urlencoded'
         if(url.includes('music.163.com')) headers['Referer'] = 'http://music.163.com'
         // headers['X-Real-IP'] = '118.88.88.88'
